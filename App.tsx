@@ -1,0 +1,45 @@
+
+import React from 'react';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import { LandingPage } from './pages/LandingPage';
+import { ShopPage } from './pages/ShopPage';
+import { ProductDetailPage } from './pages/ProductDetailPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { ReturnsPolicyPage } from './pages/ReturnsPolicyPage';
+import { CartPage } from './pages/CartPage';
+import { CheckoutPage } from './pages/CheckoutPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { CartProvider } from './hooks/useCart';
+import { ScrollToTop } from './components/ScrollToTop';
+
+const App: React.FC = () => {
+  return (
+    <CartProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/shop/:category" element={<ShopPage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/returns-policy" element={<ReturnsPolicyPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/404" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate replace to="/404" />} />
+          </Routes>
+        </Layout>
+      </HashRouter>
+    </CartProvider>
+  );
+};
+
+export default App;
+    
