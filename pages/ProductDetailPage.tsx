@@ -27,6 +27,16 @@ export const ProductDetailPage: React.FC = () => {
     if (foundProduct) {
       setProduct(foundProduct);
       setSelectedImage(foundProduct.images[0]);
+      
+      // SEO: Dynamically update page title
+      document.title = `${foundProduct.name} | Private Lives Matter`;
+      
+      // Update meta description dynamically if it exists (Optional but good for SPA SEO)
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute("content", foundProduct.description);
+      }
+
       if (foundProduct.availableSizes && foundProduct.availableSizes.length > 0) {
         setSelectedSize(foundProduct.availableSizes[0]);
       } else {

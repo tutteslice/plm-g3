@@ -80,6 +80,21 @@ export const ShopPage: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlBrand]);
 
+  // SEO: Dynamically update page title based on filters
+  useEffect(() => {
+    let titleParts = ['Shop'];
+    if (selectedBrand !== 'All') titleParts.push(selectedBrand);
+    if (selectedCategory !== 'All') titleParts.push(selectedCategory);
+    if (selectedCollection !== 'All') titleParts.push(`"${selectedCollection}"`);
+    
+    document.title = `${titleParts.join(' - ')} | Private Lives Matter`;
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", `Shop ${selectedBrand !== 'All' ? selectedBrand : 'our'} festival and rave wear collection. Find the perfect ${selectedCategory !== 'All' ? selectedCategory.toLowerCase() : 'gear'} with discreet hidden pockets.`);
+    }
+  }, [selectedBrand, selectedCategory, selectedCollection]);
+
   const updateUrl = (brnd: ProductBrand | 'All', cat: ProductCategory | 'All', sort: string, col: string, typ: string, sea: string) => {
     const path = brnd === 'All' ? '/shop' : `/shop/${encodeURIComponent(brnd)}`;
     const params = new URLSearchParams();

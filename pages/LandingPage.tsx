@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { CategoryCard } from '../components/CategoryCard';
@@ -10,6 +10,15 @@ import { BRAND_LINKS_INFO, LANDING_PAGE_INTRO } from '../constants';
 export const LandingPage: React.FC = () => {
   const { products } = useProducts();
   const featuredProducts = products.filter(p => p.featured).slice(0, 4);
+
+  // SEO: Reset title for home page
+  useEffect(() => {
+    document.title = "Private Lives Matter | To the peak, not the precinct.";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "A unique clothing brand dedicated to rave and festival culture. Shop our PLM™ Designs featuring discreet, hand-sewn hidden pockets.");
+    }
+  }, []);
 
   return (
     <div className="space-y-16 md:space-y-24">
