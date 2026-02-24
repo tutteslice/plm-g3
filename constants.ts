@@ -1,6 +1,6 @@
 
 import { InstagramIcon, TikTokIcon, PinterestIcon } from './components/Icons';
-import { SocialLink, ProductBrand, BrandLinkInfo } from './types';
+import { SocialLink, BrandLinkInfo } from './types';
 
 export const COLORS = {
   primary: '#FFFFFF',
@@ -32,22 +32,22 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const BRAND_LINKS_INFO: BrandLinkInfo[] = [
   { 
-    name: ProductBrand.DESIGNS, 
-    path: `/shop/${encodeURIComponent(ProductBrand.DESIGNS)}`, 
-    imageUrl: 'https://picsum.photos/seed/plmcat/800/600',
-    description: 'Original clothing designs with discreetly sewn hidden pockets for your essentials.'
+    name: "Summer", 
+    path: `/shop?season=Summer`, 
+    imageUrl: '/bathingsuit1.png',
+    description: 'Light and vibrant styles for the warmer days and festival nights.'
   },
   { 
-    name: ProductBrand.PRINTS, 
-    path: `/shop/${encodeURIComponent(ProductBrand.PRINTS)}`, 
-    imageUrl: 'https://picsum.photos/seed/printscat/800/600',
-    description: 'Vibrant art prints to bring energy to your space.'
+    name: "Winter", 
+    path: `/shop?season=Winter`, 
+    imageUrl: '/overall_men1.png',
+        description: 'Cozy and warm apparel to keep the rave going in colder climates.'
   },
   { 
-    name: ProductBrand.SECOND_HAND, 
-    path: `/shop/${encodeURIComponent(ProductBrand.SECOND_HAND)}`, 
-    imageUrl: 'https://picsum.photos/seed/secondhandcat/800/600',
-    description: 'Curated unique second-hand finds with a story.'
+    name: "Fall", 
+    path: `/shop?season=Fall`, 
+    imageUrl: '/bodysuit1.png',
+    description: 'Transitional pieces for those crisp autumn vibes and indoor gatherings.'
   },
 ];
 

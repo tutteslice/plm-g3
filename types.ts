@@ -28,7 +28,7 @@ export interface Product {
   featured?: boolean;
   details?: string; // More detailed description for product page
   size?: string; // Informational size (e.g., "S")
-  collection?: string; // Collection name (e.g., "To the peak, not the precinct.")
+  collection?: string; // Collection name (e.g., "Dopamine Threads")
   type?: string; // e.g., "Overall", "Tracksuit", "Bikini"
   season?: string; // e.g., "Summer", "All Season", "Winter"
   availableSizes?: string[]; // Selectable sizes
@@ -52,7 +52,7 @@ export interface SocialLink {
 }
 
 export interface BrandLinkInfo {
-  name: ProductBrand;
+  name: string;
   path: string;
   imageUrl: string;
   description: string;

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../components/Button';
 import { FormField } from '../components/FormField';
 import { PROFESSIONAL_EMAIL, SOCIAL_LINKS } from '../constants';
@@ -21,6 +21,14 @@ export const ContactPage: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  useEffect(() => {
+    document.title = "Contact Us | Private Lives Matter";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Get in touch with Private Lives Matter. Have questions about our festival wear or hidden pocket designs? We'd love to hear from you!");
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;

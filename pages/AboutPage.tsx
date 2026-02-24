@@ -1,8 +1,16 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ABOUT_US_STORY } from '../constants';
 
 export const AboutPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "About Us | Private Lives Matter";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Learn about Private Lives Matter - born from festival frustration, built for the dancefloor. Discover how we're revolutionizing rave wear with discreet hidden pockets.");
+    }
+  }, []);
+
   return (
     <div className="container mx-auto py-8 md:py-12">
       <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-center mb-10 md:mb-16">Our Story</h1>

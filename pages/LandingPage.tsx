@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { CategoryCard } from '../components/CategoryCard';
@@ -7,9 +7,16 @@ import { FeaturedItemCard } from '../components/FeaturedItemCard';
 import { useProducts } from '../hooks/useProducts';
 import { BRAND_LINKS_INFO, LANDING_PAGE_INTRO } from '../constants';
 
+const HERO_IMAGES = [
+  "/new_collection.png",
+  "/new_collection_tracksuits.png",
+  "/new_collection_winter.png"
+];
+
 export const LandingPage: React.FC = () => {
   const { products } = useProducts();
   const featuredProducts = products.filter(p => p.featured).slice(0, 4);
+  const [currentHeroIdx, setCurrentHeroIdx] = useState(0);
 
   // SEO: Reset title for home page
   useEffect(() => {
@@ -20,30 +27,54 @@ export const LandingPage: React.FC = () => {
     }
   }, []);
 
+  // Hero Carousel logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroIdx((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000); // Cycle every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
       <section 
-        className="relative text-center py-20 md:py-32 rounded-xl overflow-hidden shadow-2xl"
+        className="relative text-center py-24 md:py-40 min-h-[80vh] flex flex-col justify-center items-center rounded-xl overflow-hidden shadow-2xl transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/new_collection.png")',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("${HERO_IMAGES[currentHeroIdx]}")`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center center'
         }}
       >
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-2 leading-tight animate-fade-in-down drop-shadow-lg">
-            New collection.
+          <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 leading-tight animate-fade-in-down drop-shadow-lg">
+            New collection:
+            <br />
+            <span className="text-4xl sm:text-5xl md:text-7xl" style={{ color: '#F9F871', textDecoration: 'underline', textDecorationColor: '#EF4444', textDecorationThickness: '3px', textUnderlineOffset: '8px' }}>Dopamine Threads</span>
           </h1>
           <h2 className="font-poppins text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-8 animate-fade-in-down animation-delay-300 drop-shadow-lg italic">
-            "To the peak, not the precinct."
+            "To the <span style={{ color: '#10B981' }}>peak</span>, not the <span style={{ color: '#EF4444' }}>precinct</span>."
           </h2>
           <p className="font-raleway text-lg md:text-2xl text-white max-w-3xl mx-auto mb-10 animate-fade-in-up animation-delay-600 font-semibold drop-shadow-md">
             Hidden pocket included. Private Lives Matter
           </p>
-          <Button to="/shop?collection=To+the+peak,+not+the+precinct." size="lg" variant="primary" className="animate-fade-in-up animation-delay-800 shadow-xl border-2 border-white">
+          <Button to="/shop?collection=Dopamine+Threads" size="lg" variant="primary" className="animate-fade-in-up animation-delay-800 shadow-xl border-2 border-white">
             Explore the Collection
           </Button>
+        </div>
+        
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+          {HERO_IMAGES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentHeroIdx(idx)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentHeroIdx === idx ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/60'
+              }`}
+              aria-label={`Go to hero slide ${idx + 1}`}
+            />
+          ))}
         </div>
       </section>
 

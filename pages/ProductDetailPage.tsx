@@ -37,6 +37,37 @@ export const ProductDetailPage: React.FC = () => {
         metaDescription.setAttribute("content", foundProduct.description);
       }
 
+      // Add structured data for product
+      const existingScript = document.getElementById('product-structured-data');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      
+      const script = document.createElement('script');
+      script.id = 'product-structured-data';
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": foundProduct.name,
+        "description": foundProduct.description,
+        "image": `https://privatelivesmatter.com${foundProduct.images[0]}`,
+        "brand": {
+          "@type": "Brand",
+          "name": foundProduct.brand
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": foundProduct.price.toFixed(2),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": `https://privatelivesmatter.com/#/product/${foundProduct.id}`
+        },
+        "category": foundProduct.category,
+        "sku": foundProduct.id
+      });
+      document.head.appendChild(script);
+
       if (foundProduct.availableSizes && foundProduct.availableSizes.length > 0) {
         setSelectedSize(foundProduct.availableSizes[0]);
       } else {
@@ -52,7 +83,14 @@ export const ProductDetailPage: React.FC = () => {
     }
     // Simulate loading delay
     const timer = setTimeout(() => setIsLoading(false), 300);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      // Cleanup structured data on unmount
+      const existingScript = document.getElementById('product-structured-data');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, [productId, navigate, products]);
 
   const handleAddToCart = () => {

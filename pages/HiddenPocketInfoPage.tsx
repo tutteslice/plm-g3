@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '../components/Button';
 
 export const HiddenPocketInfoPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Hidden Pocket Info | Private Lives Matter";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Learn about our signature hidden pocket feature. Every Private Lives Matter design includes a discreetly sewn pocket to keep your essentials secure on the dancefloor.");
+    }
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-20 max-w-3xl">
       <h1 className="font-poppins text-4xl md:text-5xl font-bold text-center text-primary-text mb-8">
-        The Hidden Pocket Option
+        The Hidden Pocket - A Game Changer
       </h1>
       
       <div className="bg-white rounded-xl shadow-md p-8 md:p-12 mb-10">
