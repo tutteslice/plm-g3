@@ -30,8 +30,8 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 1. Clone the repository and navigate into the project directory:
    ```bash
-   git clone https://github.com/tutteslice/dmt-g3.git
-   cd dmt-g3
+   git clone https://github.com/tutteslice/plm-g3.git
+   cd plm-g3
    ```
 
 2. Install the necessary dependencies:
