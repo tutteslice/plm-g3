@@ -25,17 +25,35 @@ const getCollections = (products: Product[]): string[] => {
   return Array.from(uniqueCollections);
 };
 
+const getTypes = (products: Product[]): string[] => {
+  const uniqueTypes = new Set<string>();
+  products.forEach(product => {
+    if (product.type) uniqueTypes.add(product.type);
+  });
+  return Array.from(uniqueTypes).sort();
+};
+
+const getSeasons = (products: Product[]): string[] => {
+  const uniqueSeasons = new Set<string>();
+  products.forEach(product => {
+    if (product.season) uniqueSeasons.add(product.season);
+  });
+  return Array.from(uniqueSeasons).sort();
+};
+
 export const ShopPage: React.FC = () => {
   const { brand: urlBrand } = useParams<{ brand?: string }>();
   const location = useLocation();
   const navigate = useNavigate();
   const { products } = useProducts();
 
-  // Parse query params for sort, category, and collection
+  // Parse query params
   const queryParams = new URLSearchParams(location.search);
   const initialSortOption = queryParams.get('sort') || 'featured';
   const initialCategoryOption = queryParams.get('category') || 'All';
   const initialCollectionOption = queryParams.get('collection') || 'All';
+  const initialTypeOption = queryParams.get('type') || 'All';
+  const initialSeasonOption = queryParams.get('season') || 'All';
   
   const [selectedBrand, setSelectedBrand] = useState<ProductBrand | 'All'>(
     urlBrand ? decodeURIComponent(urlBrand) as ProductBrand : 'All'
@@ -45,10 +63,14 @@ export const ShopPage: React.FC = () => {
   );
   const [sortOption, setSortOption] = useState<string>(initialSortOption);
   const [selectedCollection, setSelectedCollection] = useState<string>(initialCollectionOption);
+  const [selectedType, setSelectedType] = useState<string>(initialTypeOption);
+  const [selectedSeason, setSelectedSeason] = useState<string>(initialSeasonOption);
 
   const availableBrands = useMemo(() => getBrands(products), [products]);
   const availableCategories = useMemo(() => getCategories(products), [products]);
   const availableCollections = useMemo(() => getCollections(products), [products]);
+  const availableTypes = useMemo(() => getTypes(products), [products]);
+  const availableSeasons = useMemo(() => getSeasons(products), [products]);
 
   useEffect(() => {
     const newBrand = urlBrand ? decodeURIComponent(urlBrand) as ProductBrand : 'All';
@@ -58,34 +80,46 @@ export const ShopPage: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlBrand]);
 
-  const updateUrl = (brnd: ProductBrand | 'All', cat: ProductCategory | 'All', sort: string, col: string) => {
+  const updateUrl = (brnd: ProductBrand | 'All', cat: ProductCategory | 'All', sort: string, col: string, typ: string, sea: string) => {
     const path = brnd === 'All' ? '/shop' : `/shop/${encodeURIComponent(brnd)}`;
     const params = new URLSearchParams();
     if (cat !== 'All') params.set('category', cat);
     if (sort !== 'featured') params.set('sort', sort);
     if (col !== 'All') params.set('collection', col);
+    if (typ !== 'All') params.set('type', typ);
+    if (sea !== 'All') params.set('season', sea);
     const search = params.toString();
     navigate(`${path}${search ? `?${search}` : ''}`);
   };
 
   const handleBrandChange = (brand: ProductBrand | 'All') => {
     setSelectedBrand(brand);
-    updateUrl(brand, selectedCategory, sortOption, selectedCollection);
+    updateUrl(brand, selectedCategory, sortOption, selectedCollection, selectedType, selectedSeason);
   };
 
   const handleCategoryChange = (category: ProductCategory | 'All') => {
     setSelectedCategory(category);
-    updateUrl(selectedBrand, category, sortOption, selectedCollection);
+    updateUrl(selectedBrand, category, sortOption, selectedCollection, selectedType, selectedSeason);
   };
 
   const handleSortChange = (newSortOption: string) => {
     setSortOption(newSortOption);
-    updateUrl(selectedBrand, selectedCategory, newSortOption, selectedCollection);
+    updateUrl(selectedBrand, selectedCategory, newSortOption, selectedCollection, selectedType, selectedSeason);
   };
 
   const handleCollectionChange = (newCollection: string) => {
     setSelectedCollection(newCollection);
-    updateUrl(selectedBrand, selectedCategory, sortOption, newCollection);
+    updateUrl(selectedBrand, selectedCategory, sortOption, newCollection, selectedType, selectedSeason);
+  };
+
+  const handleTypeChange = (newType: string) => {
+    setSelectedType(newType);
+    updateUrl(selectedBrand, selectedCategory, sortOption, selectedCollection, newType, selectedSeason);
+  };
+
+  const handleSeasonChange = (newSeason: string) => {
+    setSelectedSeason(newSeason);
+    updateUrl(selectedBrand, selectedCategory, sortOption, selectedCollection, selectedType, newSeason);
   };
 
   const filteredAndSortedProducts = useMemo(() => {
@@ -101,6 +135,14 @@ export const ShopPage: React.FC = () => {
     
     if (selectedCollection !== 'All') {
       filtered = filtered.filter(p => p.collection === selectedCollection);
+    }
+
+    if (selectedType !== 'All') {
+      filtered = filtered.filter(p => p.type === selectedType);
+    }
+
+    if (selectedSeason !== 'All') {
+      filtered = filtered.filter(p => p.season === selectedSeason);
     }
 
     switch (sortOption) {
@@ -126,7 +168,7 @@ export const ShopPage: React.FC = () => {
         break;
     }
     return filtered;
-  }, [selectedBrand, selectedCategory, sortOption, selectedCollection, products]);
+  }, [selectedBrand, selectedCategory, sortOption, selectedCollection, selectedType, selectedSeason, products]);
 
   return (
     <div className="container mx-auto">
@@ -135,6 +177,7 @@ export const ShopPage: React.FC = () => {
       </h1>
 
       <FilterSortControls
+        products={products}
         brands={availableBrands}
         selectedBrand={selectedBrand}
         onBrandChange={handleBrandChange}
@@ -144,6 +187,12 @@ export const ShopPage: React.FC = () => {
         collections={availableCollections}
         selectedCollection={selectedCollection}
         onCollectionChange={handleCollectionChange}
+        types={availableTypes}
+        selectedType={selectedType}
+        onTypeChange={handleTypeChange}
+        seasons={availableSeasons}
+        selectedSeason={selectedSeason}
+        onSeasonChange={handleSeasonChange}
         sortOption={sortOption}
         onSortChange={handleSortChange}
       />

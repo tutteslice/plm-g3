@@ -7,6 +7,7 @@ import { Button } from '../components/Button';
 import { useCart } from '../hooks/useCart';
 import { ArrowLeftIcon } from '../components/Icons';
 import { ImageMagnifier } from '../components/ImageMagnifier';
+import { ProductCard } from '../components/ProductCard';
 
 export const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -171,6 +172,22 @@ export const ProductDetailPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Related Products Section */}
+      {product.relatedProductIds && product.relatedProductIds.length > 0 && (
+        <div className="mt-20 border-t pt-16">
+          <h2 className="font-poppins text-3xl font-bold text-primary-text mb-8">Complete the Look</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {products
+              .filter(p => product.relatedProductIds?.includes(p.id))
+              .map(relatedProduct => (
+                <ProductCard key={relatedProduct.id} product={relatedProduct} />
+              ))
+            }
+          </div>
+        </div>
+      )}
+
       <style>{`
         @keyframes fade-in-left {
           0% { opacity: 0; transform: translateX(-20px); }
