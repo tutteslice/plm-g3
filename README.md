@@ -1,20 +1,74 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Private Lives Matter - E-Commerce Storefront
 
-# Run and deploy your AI Studio app
+Private Lives Matter is a modern, React-based e-commerce frontend built to support a unique clothing brand dedicated to rave and festival culture. 
 
-This contains everything you need to run your app locally.
+Born out of frustration at festival security gates, our mission is simple: **"To the peak, not the precinct."** Every item in our signature PLM™ Designs collection features a discreetly hand-sewn hidden pocket, allowing our community to securely stash their essentials and focus entirely on the music and the moment.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Q1DB1vffs4uLgyfooVNTBYDxf_4qWR7_
+## Features
 
-## Run Locally
+- **Dynamic Shop Filtering:** A robust, real-time filtering system that allows users to sort and narrow down products by Brand, Category (e.g., Swimwear, Activewear, Underwear), and specific Collections.
+- **Interactive Product Galleries:** Product cards feature hoverable thumbnail galleries that instantly update the main image without needing to navigate away.
+- **Image Magnification:** A custom-built, responsive image magnifier allows users to examine the high-quality textures, prints, and details of the clothing by simply hovering over the product images.
+- **Cart Management:** A persistent shopping cart using local storage, featuring size and color selection validation, unique item ID generation, and an interactive sidebar.
+- **Responsive Design:** Fully responsive, mobile-first design built with Tailwind CSS, ensuring a seamless shopping experience across all devices.
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+- **Framework:** React 19 (`react`, `react-dom`)
+- **Routing:** React Router v7 (`react-router-dom` using `HashRouter`)
+- **Build Tool:** Vite 6
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Building and Running Locally
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone https://github.com/tutteslice/dmt-g3.git
+   cd dmt-g3
+   ```
+
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure Environment Variables:
+   Create a `.env.local` file in the root directory and add your required API keys (if applicable to your environment):
+   ```env
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+### Scripts
+
+- **Start Development Server:**
+  ```bash
+  npm run dev
+  ```
+  Starts the Vite dev server locally.
+
+- **Build for Production:**
+  ```bash
+  npm run build
+  ```
+  Compiles the application into static files in the `dist` directory.
+
+- **Preview Production Build:**
+  ```bash
+  npm run preview
+  ```
+  Locally preview the compiled production build.
+
+## Project Structure
+
+*   `components/`: Reusable UI elements (Header, Product Cards, Image Magnifier, Cart Sidebar).
+*   `pages/`: Main route views (Landing, Shop, Product Detail, Checkout, Media, Policies).
+*   `hooks/`: Custom React hooks (`useCart`, `useProducts`) managing global state via Context.
+*   `data/`: Static product inventory and seed data (`products.ts`).
+*   `types.ts`: Core TypeScript interfaces and enums mapping the domain models.
