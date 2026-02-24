@@ -11,12 +11,12 @@ export const AboutPage: React.FC = () => {
           {/* Placeholder for personal photo */}
           <div className="aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-5 bg-gray-200 rounded-lg shadow-xl overflow-hidden">
             <img 
-              src="https://picsum.photos/seed/aboutus/600/750" 
-              alt="Dopamine Threads Founder" 
+              src="/thompag-plm.jpeg" 
+              alt="Private Lives Matter Founder" 
               className="w-full h-full object-cover" 
             />
           </div>
-          <p className="text-center text-sm text-gray-500 mt-2 italic">A glimpse into the vibrant world of Dopamine Threads.</p>
+          <p className="text-center text-sm text-gray-500 mt-2 italic">A glimpse into the vibrant world of Private Lives Matter.</p>
         </div>
         <div className="md:col-span-3 animate-fade-in-right animation-delay-300">
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">

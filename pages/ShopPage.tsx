@@ -1,10 +1,15 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { ProductCard } from '../components/ProductCard';
 import { FilterSortControls } from '../components/FilterSortControls';
-import { sampleProducts } from '../data/products';
-import { Product, ProductCategory } from '../types';
+import { useProducts } from '../hooks/useProducts';
+import { Product, ProductBrand, ProductCategory } from '../types';
+
+const getBrands = (products: Product[]): ProductBrand[] => {
+  const uniqueBrands = new Set<ProductBrand>();
+  products.forEach(product => uniqueBrands.add(product.brand));
+  return Array.from(uniqueBrands);
+};
 
 const getCategories = (products: Product[]): ProductCategory[] => {
   const uniqueCategories = new Set<ProductCategory>();
@@ -12,54 +17,91 @@ const getCategories = (products: Product[]): ProductCategory[] => {
   return Array.from(uniqueCategories);
 };
 
+const getCollections = (products: Product[]): string[] => {
+  const uniqueCollections = new Set<string>();
+  products.forEach(product => {
+    if (product.collection) uniqueCollections.add(product.collection);
+  });
+  return Array.from(uniqueCollections);
+};
+
 export const ShopPage: React.FC = () => {
-  const { category: urlCategory } = useParams<{ category?: string }>();
+  const { brand: urlBrand } = useParams<{ brand?: string }>();
   const location = useLocation();
   const navigate = useNavigate();
+  const { products } = useProducts();
 
-  // Parse query params for sort
+  // Parse query params for sort, category, and collection
   const queryParams = new URLSearchParams(location.search);
   const initialSortOption = queryParams.get('sort') || 'featured';
+  const initialCategoryOption = queryParams.get('category') || 'All';
+  const initialCollectionOption = queryParams.get('collection') || 'All';
   
+  const [selectedBrand, setSelectedBrand] = useState<ProductBrand | 'All'>(
+    urlBrand ? decodeURIComponent(urlBrand) as ProductBrand : 'All'
+  );
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'All'>(
-    urlCategory ? decodeURIComponent(urlCategory) as ProductCategory : 'All'
+    initialCategoryOption as ProductCategory | 'All'
   );
   const [sortOption, setSortOption] = useState<string>(initialSortOption);
+  const [selectedCollection, setSelectedCollection] = useState<string>(initialCollectionOption);
 
-  const availableCategories = useMemo(() => getCategories(sampleProducts), []);
+  const availableBrands = useMemo(() => getBrands(products), [products]);
+  const availableCategories = useMemo(() => getCategories(products), [products]);
+  const availableCollections = useMemo(() => getCollections(products), [products]);
 
   useEffect(() => {
-    const newCategory = urlCategory ? decodeURIComponent(urlCategory) as ProductCategory : 'All';
-    if (newCategory !== selectedCategory) {
-      setSelectedCategory(newCategory);
+    const newBrand = urlBrand ? decodeURIComponent(urlBrand) as ProductBrand : 'All';
+    if (newBrand !== selectedBrand) {
+      setSelectedBrand(newBrand);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlCategory]);
+  }, [urlBrand]);
 
+  const updateUrl = (brnd: ProductBrand | 'All', cat: ProductCategory | 'All', sort: string, col: string) => {
+    const path = brnd === 'All' ? '/shop' : `/shop/${encodeURIComponent(brnd)}`;
+    const params = new URLSearchParams();
+    if (cat !== 'All') params.set('category', cat);
+    if (sort !== 'featured') params.set('sort', sort);
+    if (col !== 'All') params.set('collection', col);
+    const search = params.toString();
+    navigate(`${path}${search ? `?${search}` : ''}`);
+  };
+
+  const handleBrandChange = (brand: ProductBrand | 'All') => {
+    setSelectedBrand(brand);
+    updateUrl(brand, selectedCategory, sortOption, selectedCollection);
+  };
 
   const handleCategoryChange = (category: ProductCategory | 'All') => {
     setSelectedCategory(category);
-    if (category === 'All') {
-      navigate(`/shop${sortOption !== 'featured' ? `?sort=${sortOption}` : ''}`);
-    } else {
-      navigate(`/shop/${encodeURIComponent(category)}${sortOption !== 'featured' ? `?sort=${sortOption}` : ''}`);
-    }
+    updateUrl(selectedBrand, category, sortOption, selectedCollection);
   };
 
   const handleSortChange = (newSortOption: string) => {
     setSortOption(newSortOption);
-    const path = selectedCategory === 'All' ? '/shop' : `/shop/${encodeURIComponent(selectedCategory)}`;
-    if (newSortOption !== 'featured') {
-      navigate(`${path}?sort=${newSortOption}`);
-    } else {
-      navigate(path);
-    }
+    updateUrl(selectedBrand, selectedCategory, newSortOption, selectedCollection);
+  };
+
+  const handleCollectionChange = (newCollection: string) => {
+    setSelectedCollection(newCollection);
+    updateUrl(selectedBrand, selectedCategory, sortOption, newCollection);
   };
 
   const filteredAndSortedProducts = useMemo(() => {
-    let filtered = selectedCategory === 'All'
-      ? sampleProducts
-      : sampleProducts.filter(p => p.category === selectedCategory);
+    let filtered = [...products];
+    
+    if (selectedBrand !== 'All') {
+      filtered = filtered.filter(p => p.brand === selectedBrand);
+    }
+
+    if (selectedCategory !== 'All') {
+      filtered = filtered.filter(p => p.category === selectedCategory);
+    }
+    
+    if (selectedCollection !== 'All') {
+      filtered = filtered.filter(p => p.collection === selectedCollection);
+    }
 
     switch (sortOption) {
       case 'price-asc':
@@ -76,27 +118,32 @@ export const ShopPage: React.FC = () => {
         break;
       case 'featured':
       default:
-        // Show featured items first, then by some default (e.g., name)
         filtered.sort((a, b) => {
           if (a.featured && !b.featured) return -1;
           if (!a.featured && b.featured) return 1;
-          return a.name.localeCompare(b.name); // Default fallback sort
+          return a.name.localeCompare(b.name);
         });
         break;
     }
     return filtered;
-  }, [selectedCategory, sortOption]);
+  }, [selectedBrand, selectedCategory, sortOption, selectedCollection, products]);
 
   return (
     <div className="container mx-auto">
       <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-center mb-8">
-        {selectedCategory === 'All' ? 'All Products' : selectedCategory}
+        {selectedBrand === 'All' ? 'All Products' : selectedBrand}
       </h1>
 
       <FilterSortControls
+        brands={availableBrands}
+        selectedBrand={selectedBrand}
+        onBrandChange={handleBrandChange}
         categories={availableCategories}
         selectedCategory={selectedCategory}
         onCategoryChange={handleCategoryChange}
+        collections={availableCollections}
+        selectedCollection={selectedCollection}
+        onCollectionChange={handleCollectionChange}
         sortOption={sortOption}
         onSortChange={handleSortChange}
       />
@@ -116,4 +163,3 @@ export const ShopPage: React.FC = () => {
     </div>
   );
 };
-    

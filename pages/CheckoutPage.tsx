@@ -103,12 +103,12 @@ export const CheckoutPage: React.FC = () => {
             <h2 className="font-poppins text-xl font-semibold mb-4">Order Summary</h2>
             <div className="max-h-60 overflow-y-auto mb-4 border-b pb-2">
               {cartItems.map((item: CartItem) => (
-                <div key={`${item.id}-${item.selectedSize || 'default'}`} className="flex justify-between items-center py-2 text-sm">
+                <div key={item.id} className="flex justify-between items-center py-2 text-sm">
                   <div className="flex items-center">
                     <img src={item.images[0]} alt={item.name} className="w-10 h-10 object-cover rounded mr-2" />
-                    <span>{item.name} ({item.quantity}) {item.selectedSize && ` - ${item.selectedSize}`}</span>
+                    <span>{item.name} <span className="text-xs text-gray-400 italic">(Unique)</span></span>
                   </div>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                  <span>${item.price.toFixed(2)}</span>
                 </div>
               ))}
             </div>
@@ -154,4 +154,3 @@ export const CheckoutPage: React.FC = () => {
     </div>
   );
 };
-    

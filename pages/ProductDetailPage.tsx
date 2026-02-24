@@ -1,31 +1,40 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { sampleProducts } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
 import { Product } from '../types';
 import { Button } from '../components/Button';
 import { useCart } from '../hooks/useCart';
-import { ArrowLeftIcon, PlusIcon, MinusIcon } from '../components/Icons';
+import { ArrowLeftIcon } from '../components/Icons';
+import { ImageMagnifier } from '../components/ImageMagnifier';
 
 export const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
-  const { addToCart, getItemQuantity } = useCart();
+  const { addToCart, isInCart } = useCart();
+  const { products } = useProducts();
 
   const [product, setProduct] = useState<Product | null>(null);
   const [selectedImage, setSelectedImage] = useState<string>('');
-  const [selectedSize, setSelectedSize] = useState<string>('');
-  const [quantity, setQuantity] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true); // Simulate loading
+  const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedColor, setSelectedColor] = useState<string>('');
 
   useEffect(() => {
     setIsLoading(true);
-    const foundProduct = sampleProducts.find(p => p.id === productId);
+    const foundProduct = products.find(p => p.id === productId);
     if (foundProduct) {
       setProduct(foundProduct);
       setSelectedImage(foundProduct.images[0]);
-      if (foundProduct.sizes && foundProduct.sizes.length > 0) {
-        setSelectedSize(foundProduct.sizes[0]);
+      if (foundProduct.availableSizes && foundProduct.availableSizes.length > 0) {
+        setSelectedSize(foundProduct.availableSizes[0]);
+      } else {
+        setSelectedSize('');
+      }
+      if (foundProduct.availableColors && foundProduct.availableColors.length > 0) {
+        setSelectedColor(foundProduct.availableColors[0]);
+      } else {
+        setSelectedColor('');
       }
     } else {
       navigate('/404'); // Product not found
@@ -33,18 +42,11 @@ export const ProductDetailPage: React.FC = () => {
     // Simulate loading delay
     const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
-  }, [productId, navigate]);
+  }, [productId, navigate, products]);
 
   const handleAddToCart = () => {
     if (product) {
-      if (product.sizes && !selectedSize) {
-        alert("Please select a size."); // Simple validation
-        return;
-      }
-      addToCart(product, quantity, product.sizes ? selectedSize : undefined);
-      // Optionally: show notification, redirect to cart, or open cart sidebar
-      // For now, just log
-      console.log(`${quantity} of ${product.name} (Size: ${selectedSize || 'N/A'}) added to cart.`);
+      addToCart(product, selectedSize, selectedColor);
     }
   };
 
@@ -56,6 +58,8 @@ export const ProductDetailPage: React.FC = () => {
     );
   }
 
+  const alreadyInCart = isInCart(product.id, selectedSize, selectedColor);
+
   return (
     <div className="container mx-auto">
       <Button variant="ghost" onClick={() => navigate(-1)} className="mb-6 text-sm">
@@ -65,7 +69,7 @@ export const ProductDetailPage: React.FC = () => {
         {/* Image Gallery */}
         <div className="animate-fade-in-left">
           <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-            <img src={selectedImage} alt={product.name} className="w-full h-full object-cover" />
+            <ImageMagnifier src={selectedImage} alt={product.name} />
           </div>
           {product.images.length > 1 && (
             <div className="grid grid-cols-4 gap-2 mt-4">
@@ -86,7 +90,13 @@ export const ProductDetailPage: React.FC = () => {
 
         {/* Product Info */}
         <div className="animate-fade-in-right">
-          <span className="text-sm text-gray-500 uppercase tracking-wider">{product.category}</span>
+          <div className="flex flex-wrap items-center gap-3">
+             <span className="text-sm text-gray-500 uppercase tracking-wider">{product.brand}</span>
+             <span className="text-xs font-semibold text-gray-400 border border-gray-300 px-2 py-0.5 rounded">{product.category}</span>
+             {product.collection && (
+               <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full font-semibold italic border border-accent/20">"{product.collection}"</span>
+             )}
+          </div>
           <h1 className="font-poppins text-3xl md:text-4xl font-bold my-2">{product.name}</h1>
           <p className="font-poppins text-3xl text-accent mb-4">${product.price.toFixed(2)}</p>
           
@@ -95,66 +105,68 @@ export const ProductDetailPage: React.FC = () => {
             {product.details && <p className="mt-2">{product.details}</p>}
           </div>
 
-          {product.sizes && product.sizes.length > 0 && (
-            <div className="mb-6">
-              <label htmlFor="size-selector" className="block text-sm font-medium text-gray-700 mb-1">
-                Select Size: <span className="font-semibold">{selectedSize}</span>
-              </label>
-              <div className="flex flex-wrap gap-2">
-                {product.sizes.map(size => (
-                  <Button
-                    key={size}
-                    variant={selectedSize === size ? 'primary' : 'outline'}
-                    size="sm"
-                    onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 ${selectedSize === size ? '' : 'border-gray-300 text-gray-700 hover:bg-gray-100'}`}
-                  >
-                    {size}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          )}
-
           {product.dimensions && (
             <div className="mb-6">
               <p className="text-sm text-gray-700"><span className="font-medium">Dimensions:</span> {product.dimensions}</p>
             </div>
           )}
-          
-          {/* Quantity Selector */}
-          <div className="mb-6">
-             <label htmlFor="quantity-selector" className="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
-            <div className="flex items-center border border-gray-300 rounded-md w-max">
-              <Button variant="ghost" onClick={() => setQuantity(q => Math.max(1, q - 1))} className="p-2 rounded-r-none border-r border-gray-300" aria-label="Decrease quantity">
-                <MinusIcon className="w-5 h-5" />
-              </Button>
-              <input
-                id="quantity-selector"
-                type="number"
-                value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value, 10) || 1))}
-                className="w-12 text-center border-none focus:ring-0"
-                min="1"
-              />
-              <Button variant="ghost" onClick={() => setQuantity(q => q + 1)} className="p-2 rounded-l-none border-l border-gray-300" aria-label="Increase quantity">
-                <PlusIcon className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
 
+          {product.size && !product.availableSizes && (
+            <div className="mb-6">
+              <p className="text-sm text-gray-700"><span className="font-medium">Size:</span> {product.size}</p>
+            </div>
+          )}
+
+          {product.modelInfo && (
+            <div className="mb-6">
+              <p className="text-sm text-gray-700 italic">{product.modelInfo}</p>
+            </div>
+          )}
+
+          {product.availableSizes && product.availableSizes.length > 0 && (
+            <div className="mb-4">
+              <label htmlFor="size-select" className="block text-sm font-medium text-gray-700 mb-1">Size</label>
+              <select
+                id="size-select"
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-accent focus:border-accent sm:text-sm rounded-md"
+              >
+                {product.availableSizes.map(s => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {product.availableColors && product.availableColors.length > 0 && (
+            <div className="mb-6">
+              <label htmlFor="color-select" className="block text-sm font-medium text-gray-700 mb-1">Color</label>
+              <select
+                id="color-select"
+                value={selectedColor}
+                onChange={(e) => setSelectedColor(e.target.value)}
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-accent focus:border-accent sm:text-sm rounded-md"
+              >
+                {product.availableColors.map(c => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          
           <Button
             size="lg"
-            variant="primary"
+            variant={alreadyInCart ? "outline" : "primary"}
             onClick={handleAddToCart}
             className="w-full md:w-auto"
-            disabled={product.sizes && !selectedSize}
+            disabled={alreadyInCart}
           >
-            Add to Cart
+            {alreadyInCart ? 'In Your Cart' : 'Add to Cart'}
           </Button>
-          {getItemQuantity(product.id, selectedSize) > 0 && (
+          {alreadyInCart && (
             <p className="text-sm text-green-600 mt-2">
-              You have {getItemQuantity(product.id, selectedSize)} of this item (size: {selectedSize || 'N/A'}) in your cart.
+              This unique item is already in your cart.
             </p>
           )}
         </div>
@@ -174,4 +186,3 @@ export const ProductDetailPage: React.FC = () => {
     </div>
   );
 };
-    

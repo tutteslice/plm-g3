@@ -1,20 +1,31 @@
-
 import React from 'react';
-import { ProductCategory } from '../types';
+import { ProductBrand, ProductCategory } from '../types';
 import { ChevronDownIcon } from './Icons';
 
 interface FilterSortControlsProps {
+  brands: ProductBrand[];
+  selectedBrand: ProductBrand | 'All';
+  onBrandChange: (brand: ProductBrand | 'All') => void;
   categories: ProductCategory[];
   selectedCategory: ProductCategory | 'All';
   onCategoryChange: (category: ProductCategory | 'All') => void;
+  collections: string[];
+  selectedCollection: string;
+  onCollectionChange: (collection: string) => void;
   sortOption: string;
   onSortChange: (sortOption: string) => void;
 }
 
 export const FilterSortControls: React.FC<FilterSortControlsProps> = ({
+  brands,
+  selectedBrand,
+  onBrandChange,
   categories,
   selectedCategory,
   onCategoryChange,
+  collections,
+  selectedCollection,
+  onCollectionChange,
   sortOption,
   onSortChange,
 }) => {
@@ -28,7 +39,29 @@ export const FilterSortControls: React.FC<FilterSortControlsProps> = ({
 
   return (
     <div className="mb-8 p-4 bg-gray-50 rounded-lg shadow">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div>
+          <label htmlFor="brand-filter" className="block text-sm font-medium text-gray-700 mb-1">
+            Filter by Brand
+          </label>
+          <div className="relative">
+            <select
+              id="brand-filter"
+              value={selectedBrand}
+              onChange={(e) => onBrandChange(e.target.value as ProductBrand | 'All')}
+              className="w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-accent focus:border-accent sm:text-sm rounded-md appearance-none"
+            >
+              <option value="All">All Brands</option>
+              {brands.map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </select>
+            <ChevronDownIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+          </div>
+        </div>
+
         <div>
           <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-1">
             Filter by Category
@@ -50,6 +83,29 @@ export const FilterSortControls: React.FC<FilterSortControlsProps> = ({
             <ChevronDownIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
           </div>
         </div>
+        
+        <div>
+          <label htmlFor="collection-filter" className="block text-sm font-medium text-gray-700 mb-1">
+            Filter by Collection
+          </label>
+          <div className="relative">
+            <select
+              id="collection-filter"
+              value={selectedCollection}
+              onChange={(e) => onCollectionChange(e.target.value)}
+              className="w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-accent focus:border-accent sm:text-sm rounded-md appearance-none"
+            >
+              <option value="All">All Collections</option>
+              {collections.map((col) => (
+                <option key={col} value={col}>
+                  {col}
+                </option>
+              ))}
+            </select>
+            <ChevronDownIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+          </div>
+        </div>
+
         <div>
           <label htmlFor="sort-options" className="block text-sm font-medium text-gray-700 mb-1">
             Sort by
@@ -74,4 +130,3 @@ export const FilterSortControls: React.FC<FilterSortControlsProps> = ({
     </div>
   );
 };
-    

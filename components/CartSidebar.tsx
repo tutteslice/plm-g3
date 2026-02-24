@@ -3,32 +3,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
 import { Button } from './Button';
-import { XIcon, PlusIcon, MinusIcon, TrashIcon } from './Icons';
+import { XIcon, TrashIcon } from './Icons';
 import { CartItem as CartItemType } from '../types'; // Renamed to avoid conflict
 
 const CartItemCard: React.FC<{ item: CartItemType }> = ({ item }) => {
-  const { updateQuantity, removeFromCart } = useCart();
+  const { removeFromCart } = useCart();
 
   return (
     <div className="flex py-4 border-b border-gray-200">
       <img src={item.images[0]} alt={item.name} className="w-20 h-20 object-cover rounded-md mr-4" />
       <div className="flex-grow">
         <Link to={`/product/${item.id}`} className="font-semibold text-primary-text hover:text-accent text-sm">{item.name}</Link>
-        {item.selectedSize && <p className="text-xs text-gray-500">Size: {item.selectedSize}</p>}
         <p className="text-xs text-gray-500">${item.price.toFixed(2)}</p>
-        <div className="flex items-center mt-2">
-          <Button size="sm" variant="ghost" onClick={() => updateQuantity(item.id, item.quantity - 1, item.selectedSize)} className="p-1" aria-label="Decrease quantity">
-            <MinusIcon className="w-4 h-4" />
-          </Button>
-          <span className="mx-2 text-sm">{item.quantity}</span>
-          <Button size="sm" variant="ghost" onClick={() => updateQuantity(item.id, item.quantity + 1, item.selectedSize)} className="p-1" aria-label="Increase quantity">
-            <PlusIcon className="w-4 h-4" />
-          </Button>
+        <div className="text-xs text-gray-400 mt-1 flex space-x-2">
+          {item.selectedSize && <span>Size: {item.selectedSize}</span>}
+          {item.selectedColor && <span>Color: {item.selectedColor}</span>}
+          {(!item.selectedSize && !item.selectedColor) && <span className="italic">Unique Item</span>}
         </div>
       </div>
       <div className="flex flex-col items-end justify-between ml-2">
-        <p className="font-semibold text-accent text-sm">${(item.price * item.quantity).toFixed(2)}</p>
-        <Button size="sm" variant="ghost" onClick={() => removeFromCart(item.id, item.selectedSize)} className="p-1 text-gray-500 hover:text-red-500" aria-label="Remove item">
+        <p className="font-semibold text-accent text-sm">${item.price.toFixed(2)}</p>
+        <Button size="sm" variant="ghost" onClick={() => removeFromCart(item.cartItemId)} className="p-1 text-gray-500 hover:text-red-500" aria-label="Remove item">
           <TrashIcon className="w-4 h-4" />
         </Button>
       </div>
@@ -67,7 +62,7 @@ export const CartSidebar: React.FC = () => {
           <>
             <div className="flex-grow overflow-y-auto p-6 space-y-4">
               {cartItems.map(item => (
-                <CartItemCard key={`${item.id}-${item.selectedSize || 'default'}`} item={item} />
+                <CartItemCard key={item.cartItemId} item={item} />
               ))}
             </div>
 
@@ -99,5 +94,3 @@ export const CartSidebar: React.FC = () => {
     </div>
   );
 };
-
-    

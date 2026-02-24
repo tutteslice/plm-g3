@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CategoryLinkInfo } from '../types';
+import { BrandLinkInfo } from '../types';
 
 interface CategoryCardProps {
-  categoryInfo: CategoryLinkInfo;
+  categoryInfo: BrandLinkInfo;
 }
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({ categoryInfo }) => {
