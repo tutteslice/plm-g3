@@ -93,6 +93,20 @@ export const ProductDetailPage: React.FC = () => {
     };
   }, [productId, navigate, products]);
 
+  useEffect(() => {
+    if (product && product.id === 'boxer-briefs-1' && !isLoading) {
+      if ((window as any).paypal) {
+        const container = document.getElementById('paypal-container-L9RHKXSLEGAF2');
+        if (container) {
+          container.innerHTML = ''; // Prevent multiple renders
+          (window as any).paypal.HostedButtons({
+            hostedButtonId: "L9RHKXSLEGAF2",
+          }).render("#paypal-container-L9RHKXSLEGAF2");
+        }
+      }
+    }
+  }, [product, isLoading]);
+
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, selectedSize, selectedColor);
@@ -217,6 +231,12 @@ export const ProductDetailPage: React.FC = () => {
             <p className="text-sm text-green-600 mt-2">
               This unique item is already in your cart.
             </p>
+          )}
+
+          {product.id === 'boxer-briefs-1' && (
+            <div className="mt-4 w-full md:w-auto">
+              <div id="paypal-container-L9RHKXSLEGAF2"></div>
+            </div>
           )}
         </div>
       </div>

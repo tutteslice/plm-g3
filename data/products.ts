@@ -57,7 +57,7 @@ export const sampleProducts: Product[] = [
     price: 40.00,
     description: 'A versatile two-piece bikini set perfect for lounging by the water or dancing at your favorite festival.',
     details: 'This classic bikini set features adjustable ties for a custom fit and double-lined fabric for durability. Part of our "PLM™ Designs" collection. Designed to move with you from the beach to the main stage. The bottoms feature a discreetly sewn hidden pocket for your small essentials.',
-    images: ['/bikini1.png', '/bikini-rave.png', '/bikini-beach.png', '/bikini.png'],
+    images: ['/bikini1.png', '/bikini-rave.png', '/bikini-beach.png', '/bikini.png', '/bikini2.jpg', '/bikini3.jpg', '/bikini4.jpg'],
     collection: 'Dopamine Threads',
     type: 'Bikini',
     season: 'Summer',

@@ -18,6 +18,7 @@ export const Footer: React.FC = () => {
             <h5 className="font-poppins text-md font-semibold text-gray-700 tracking-wider uppercase">Quick Links</h5>
             <ul className="mt-4 space-y-2">
               <li><Link to="/shop" className="text-sm text-gray-600 hover:text-accent transition-colors">Shop</Link></li>
+              <li><Link to="/tools" className="text-sm text-gray-600 hover:text-accent transition-colors">Tools</Link></li>
               <li><Link to="/about" className="text-sm text-gray-600 hover:text-accent transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="text-sm text-gray-600 hover:text-accent transition-colors">Contact</Link></li>
             </ul>
