@@ -1,133 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" /> <!-- Placeholder icon, can be replaced -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary Meta Tags -->
-  <title>Private Lives Matter | To the peak, not the precinct.</title>
-  <meta name="title" content="Private Lives Matter | To the peak, not the precinct." />
-  <meta name="description" content="A unique clothing brand dedicated to rave and festival culture. Shop our PLM™ Designs featuring discreet, hand-sewn hidden pockets to keep your essentials secure on the dancefloor." />
-  <meta name="keywords" content="rave wear, festival clothing, hidden pocket clothing, stash pocket, Private Lives Matter, festival fashion, techno apparel, party clothes, dopamine threads" />
-  <meta name="author" content="Private Lives Matter" />
+  <title>Private Lives Matter | Coming Soon</title>
+  <meta name="description" content="Private Lives Matter — festival & rave wear with discreet hidden pockets. Something new is coming. To the peak, not the precinct." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://privatelivesmatter.com/" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://privatelivesmatter.com/" />
-  <meta property="og:title" content="Private Lives Matter | Festival & Rave Wear" />
-  <meta property="og:description" content="Shop our PLM™ Designs featuring discreet, hand-sewn hidden pockets. To the peak, not the precinct." />
+  <meta property="og:title" content="Private Lives Matter | Coming Soon" />
+  <meta property="og:description" content="Something new is coming. To the peak, not the precinct." />
   <meta property="og:image" content="https://privatelivesmatter.com/new_collection.png" />
-  <meta property="og:site_name" content="Private Lives Matter" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://privatelivesmatter.com/" />
-  <meta property="twitter:title" content="Private Lives Matter | Festival & Rave Wear" />
-  <meta property="twitter:description" content="Shop our PLM™ Designs featuring discreet, hand-sewn hidden pockets. To the peak, not the precinct." />
+  <meta property="twitter:title" content="Private Lives Matter | Coming Soon" />
+  <meta property="twitter:description" content="Something new is coming. To the peak, not the precinct." />
   <meta property="twitter:image" content="https://privatelivesmatter.com/new_collection.png" />
 
-  <!-- Structured Data for Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Private Lives Matter",
-    "url": "https://privatelivesmatter.com",
-    "logo": "https://privatelivesmatter.com/new_collection.png",
-    "description": "A unique clothing brand dedicated to rave and festival culture featuring discreet hidden pockets.",
-    "sameAs": [
-      "https://instagram.com/privatelivesmatter.com_",
-      "https://tiktok.com/@privatelivesmatter",
-      "https://pinterest.com/privatelivesmatter"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "hello@privatelivesmatter.com",
-      "contactType": "Customer Service"
-    }
-  }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Structured Data for Website -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Private Lives Matter",
-    "url": "https://privatelivesmatter.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://privatelivesmatter.com/#/shop?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAQ_pWaMUG544nv03_UI5vhKdEdABqaNQTgy9QLC98XXvQItjalVQtR804tPMhlw06Q1LLLHJZa32jTY8&components=hosted-buttons&disable-funding=venmo&currency=SEK"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <style type="text/tailwindcss">
-    @layer base {
-      html {
-        font-family: 'Raleway', sans-serif;
-        color: #222222; /* Soft Black for text */
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700; /* Poppins Bold */
-      }
+    body {
+      min-height: 100vh;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Raleway', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
     }
-    @layer utilities {
-      .font-poppins {
-        font-family: 'Poppins', sans-serif;
-      }
-      .font-raleway {
-        font-family: 'Raleway', sans-serif;
-      }
-      .bg-primary { background-color: #FFFFFF; }
-      .text-primary-text { color: #222222; }
-      .bg-accent { background-color: #FF6B6B; }
-      .text-accent { color: #FF6B6B; }
-      .hover\:bg-accent-dark:hover { background-color: #E05252; } /* Darker coral for hover */
-      .bg-secondary-accent { background-color: #F9F871; }
-      .text-secondary-accent { color: #F9F871; }
 
-      /* Custom scrollbar for better aesthetics */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #FF6B6B; /* Accent color */
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #E05252; /* Darker accent */
-      }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('/new_collection.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo-text span {
+      color: #F9F871;
+    }
+
+    .tagline {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      color: #aaaaaa;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: #F9F871;
+      margin: 0 auto 3rem;
+    }
+
+    .headline {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .headline em {
+      color: #F9F871;
+      font-style: normal;
+    }
+
+    .subtext {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: #bbbbbb;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #444;
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #F9F871;
+      border-color: #F9F871;
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      font-size: 0.75rem;
+      color: #555555;
+      letter-spacing: 0.05em;
     }
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
-  }
-}
-</script>
 </head>
-<body class="bg-primary">
-  <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+  <div class="container">
+    <p class="logo-text">Private <span>Lives</span> Matter</p>
+    <p class="tagline">PLM™ — Festival &amp; Rave Wear</p>
+    <div class="divider"></div>
+    <h1 class="headline">Something new is <em>coming.</em></h1>
+    <p class="subtext">
+      We're working on something worth the wait.<br />
+      Hidden pockets. Bold threads. Built for the dancefloor.
+    </p>
+    <nav class="social-links">
+      <a href="https://instagram.com/privatelivesmatter.com_" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@privatelivesmatter" target="_blank" rel="noopener">TikTok</a>
+      <a href="mailto:hello@privatelivesmatter.com">Contact</a>
+    </nav>
+    <p class="footer-note">To the peak, not the precinct.</p>
+  </div>
 </body>
 </html>
-    
