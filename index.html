@@ -4,7 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Private Lives Matter | Coming Soon</title>
+  <meta name="description" content="Private Lives Matter — festival & rave wear with discreet hidden pockets. Something new is coming. Plus our curated privacy tools." />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://privatelivesmatter.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://privatelivesmatter.com/" />
+  <meta property="og:title" content="Private Lives Matter | Coming Soon" />
+  <meta property="og:description" content="Something new is coming. To the peak, not the precinct." />
+  <meta property="og:image" content="https://privatelivesmatter.com/new_collection.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://privatelivesmatter.com/" />
+  <meta property="twitter:title" content="Private Lives Matter | Coming Soon" />
+  <meta property="twitter:description" content="Something new is coming. To the peak, not the precinct." />
+  <meta property="twitter:image" content="https://privatelivesmatter.com/new_collection.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
@@ -19,14 +31,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
+      padding: 3rem 2rem 6rem;
       position: relative;
     }
 
-    /* Subtle noise/grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -36,7 +44,6 @@
       z-index: 0;
     }
 
-    /* Ambient glow blobs */
     .glow {
       position: fixed;
       border-radius: 50%;
@@ -45,24 +52,18 @@
       pointer-events: none;
       z-index: 0;
     }
-    .glow-coral {
-      width: 600px; height: 600px;
-      background: #FF6B6B;
-      top: -150px; left: -150px;
-    }
-    .glow-yellow {
-      width: 500px; height: 500px;
-      background: #F9F871;
-      bottom: -100px; right: -100px;
-    }
+    .glow-coral { width: 600px; height: 600px; background: #FF6B6B; top: -150px; left: -150px; }
+    .glow-yellow { width: 500px; height: 500px; background: #F9F871; bottom: -100px; right: -100px; }
 
     .container {
       position: relative;
       z-index: 1;
-      max-width: 700px;
+      max-width: 760px;
       width: 100%;
+      text-align: center;
     }
 
+    /* Hero */
     .brand {
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
@@ -72,10 +73,7 @@
       color: #ffffff;
       margin-bottom: 0.5rem;
     }
-
-    .brand span {
-      color: #FF6B6B;
-    }
+    .brand span { color: #FF6B6B; }
 
     .tagline {
       font-family: 'Raleway', sans-serif;
@@ -84,14 +82,14 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: #F9F871;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .divider {
       width: 48px;
       height: 2px;
       background: #FF6B6B;
-      margin: 0 auto 3rem;
+      margin: 0 auto 2.5rem;
     }
 
     .headline {
@@ -99,7 +97,7 @@
       font-weight: 700;
       font-size: clamp(1.1rem, 3vw, 1.5rem);
       color: #ffffff;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .body-text {
@@ -107,14 +105,15 @@
       color: #888;
       line-height: 1.75;
       max-width: 480px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 2rem;
     }
 
-    .links {
+    .social-links {
       display: flex;
       gap: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 4rem;
     }
 
     .link {
@@ -129,17 +128,153 @@
       padding-bottom: 2px;
       transition: color 0.2s, border-color 0.2s;
     }
+    .link:hover { color: #FF6B6B; border-color: transparent; }
 
-    .link:hover {
+    /* Section header */
+    .section-label {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: #FF6B6B;
-      border-color: transparent;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Tool cards */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      text-align: left;
+      margin-bottom: 4rem;
+    }
+
+    .tool-card {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .tool-card:hover { border-color: #FF6B6B33; background: #141414; }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .tool-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    .tool-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .badge-vpn { background: #1a2a1a; color: #4ade80; border: 1px solid #4ade8033; }
+    .badge-email { background: #1a1a2a; color: #818cf8; border: 1px solid #818cf833; }
+    .badge-passwords { background: #1a1a2a; color: #818cf8; border: 1px solid #818cf833; }
+    .badge-privacy { background: #2a1a1a; color: #f87171; border: 1px solid #f8717133; }
+
+    .tool-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .tool-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tool-features li {
+      font-size: 0.8rem;
+      color: #555;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .tool-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #FF6B6B;
+      font-size: 0.7rem;
+    }
+
+    .tool-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .tool-pricing {
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    .tool-cta {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #FF6B6B;
+      border: 1px solid #FF6B6B44;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .tool-cta:hover { background: #FF6B6B; color: #fff; }
+
+    .affiliate-note {
+      font-size: 0.72rem;
+      color: #333;
+      text-align: center;
+      margin-top: -2rem;
+      margin-bottom: 4rem;
     }
 
     .footer-note {
       position: fixed;
       bottom: 1.5rem;
       font-size: 0.75rem;
-      color: #444;
+      color: #333;
       letter-spacing: 0.05em;
       z-index: 1;
     }
@@ -150,20 +285,100 @@
   <div class="glow glow-yellow"></div>
 
   <div class="container">
+
+    <!-- Hero -->
     <div class="brand">Private<span>Lives</span>Matter</div>
     <div class="tagline">To the peak, not the precinct.</div>
-
     <div class="divider"></div>
-
     <h1 class="headline">We're getting a fresh look.</h1>
     <p class="body-text">
       Something new is on the way. We'll be back soon — louder, bolder, and ready for the dancefloor.
     </p>
-
-    <div class="links">
+    <div class="social-links">
       <a class="link" href="https://instagram.com/privatelivesmatter.com_" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://tiktok.com/@privatelivesmatter" target="_blank" rel="noopener">TikTok</a>
       <a class="link" href="mailto:hello@privatelivesmatter.com">Get in touch</a>
     </div>
+
+    <!-- Privacy Tools -->
+    <div class="section-label">While you wait</div>
+    <div class="section-title">Privacy Tools We Trust</div>
+    <p class="section-desc">Your data is your business. Here are the tools we actually use to keep it that way.</p>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-name">NordVPN</span>
+          <span class="tool-badge badge-vpn">VPN</span>
+        </div>
+        <p class="tool-desc">Hide your IP and encrypt your traffic. No-logs policy, ultra-fast speeds, bypass geo-restrictions.</p>
+        <ul class="tool-features">
+          <li>Threat Protection against malware & trackers</li>
+          <li>Double VPN & automatic kill switch</li>
+          <li>5500+ servers in 60 countries</li>
+        </ul>
+        <div class="tool-footer">
+          <span class="tool-pricing">From ~$3/month</span>
+          <a class="tool-cta" href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=139806" target="_blank" rel="noopener noreferrer sponsored">Get NordVPN →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-name">Proton Mail</span>
+          <span class="tool-badge badge-email">Email</span>
+        </div>
+        <p class="tool-desc">Private email alternative to Gmail. End-to-end encryption, anonymous sign-up, based in Switzerland.</p>
+        <ul class="tool-features">
+          <li>Zero-access encryption — even Proton can't read it</li>
+          <li>Self-destructing messages</li>
+          <li>Open source & independently audited</li>
+        </ul>
+        <div class="tool-footer">
+          <span class="tool-pricing">Free plan available</span>
+          <a class="tool-cta" href="https://go.getproton.me/aff_c?offer_id=7&aff_id=15997" target="_blank" rel="noopener noreferrer sponsored">Get Proton Mail →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-name">Proton Pass</span>
+          <span class="tool-badge badge-passwords">Passwords</span>
+        </div>
+        <p class="tool-desc">Secure password manager by Proton. End-to-end encrypted, open source, with integrated email aliases.</p>
+        <ul class="tool-features">
+          <li>Hide-my-email aliases built in</li>
+          <li>Built-in 2FA authenticator</li>
+          <li>Swiss privacy protection</li>
+        </ul>
+        <div class="tool-footer">
+          <span class="tool-pricing">Free plan available</span>
+          <a class="tool-cta" href="https://go.getproton.me/aff_c?offer_id=38&aff_id=15997" target="_blank" rel="noopener noreferrer sponsored">Get Proton Pass →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-name">DeleteMe</span>
+          <span class="tool-badge badge-privacy">Privacy</span>
+        </div>
+        <p class="tool-desc">Remove your personal info from data broker sites that profit from selling your name, address, and more.</p>
+        <ul class="tool-features">
+          <li>Removes data from 750+ data brokers</li>
+          <li>Quarterly privacy reports</li>
+          <li>Continuous monitoring & custom removals</li>
+        </ul>
+        <div class="tool-footer">
+          <span class="tool-pricing">From ~$10/month</span>
+          <a class="tool-cta" href="https://www.de33watrk.com/JBMJCC/KMKS9/" target="_blank" rel="noopener noreferrer sponsored">Get DeleteMe →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="affiliate-note">Some links above are affiliate links. We only recommend tools we actually use.</p>
+
   </div>
 
   <p class="footer-note">© 2026 Private Lives Matter</p>
