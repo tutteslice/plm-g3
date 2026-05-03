@@ -1,0 +1,1342 @@
+[
+  {
+    "id": 1,
+    "type": "group",
+    "text": "Everyone wearing glasses, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 2,
+    "type": "group",
+    "text": "Everyone wearing black, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 3,
+    "type": "group",
+    "text": "If you've ever ghosted someone, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 4,
+    "type": "group",
+    "text": "If you have a tattoo, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 5,
+    "type": "group",
+    "text": "Everyone who is single, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 6,
+    "type": "group",
+    "text": "Everyone in a relationship, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 7,
+    "type": "group",
+    "text": "If you've ever texted an ex while drunk, finish your drink.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 8,
+    "type": "group",
+    "text": "Everyone shorter than 170cm, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 9,
+    "type": "group",
+    "text": "Everyone taller than 180cm, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 10,
+    "type": "group",
+    "text": "If you have an iPhone, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 11,
+    "type": "group",
+    "text": "If you have an Android, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 12,
+    "type": "group",
+    "text": "Everyone who drank coffee today, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 13,
+    "type": "group",
+    "text": "If you've ever lied about your age, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 14,
+    "type": "group",
+    "text": "If you've ever stolen something small, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 15,
+    "type": "group",
+    "text": "Everyone who likes pineapple on pizza, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 16,
+    "type": "group",
+    "text": "Everyone who hates pineapple on pizza, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 17,
+    "type": "group",
+    "text": "If you've ever slept through an alarm, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 18,
+    "type": "group",
+    "text": "If you've ever faked being sick to get out of work/school, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 19,
+    "type": "group",
+    "text": "If you've ever tripped in public, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 20,
+    "type": "group",
+    "text": "Everyone who has cried during a movie, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 21,
+    "type": "group",
+    "text": "If you can speak more than 2 languages, give out 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 22,
+    "type": "group",
+    "text": "Everyone who has dyed their hair, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 23,
+    "type": "group",
+    "text": "If you've ever been pulled over by the police, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 24,
+    "type": "group",
+    "text": "Everyone who has a pet, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 25,
+    "type": "group",
+    "text": "If you've ever broken a bone, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 26,
+    "type": "group",
+    "text": "Everyone wearing a necklace, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 27,
+    "type": "group",
+    "text": "If you've ever ghosted someone after a first date, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 28,
+    "type": "group",
+    "text": "Everyone who has a tattoo they regret, take 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 29,
+    "type": "group",
+    "text": "If you prefer sweet over savory, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 30,
+    "type": "group",
+    "text": "Everyone who has ever been on TV, finish your drink.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 31,
+    "type": "group",
+    "text": "If you've ever cried at a wedding, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 32,
+    "type": "group",
+    "text": "Everyone who is currently wearing makeup, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 33,
+    "type": "group",
+    "text": "If you've ever sent a nude, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 34,
+    "type": "group",
+    "text": "If you've never sent a nude, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 35,
+    "type": "group",
+    "text": "Everyone who hates their current job, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 36,
+    "type": "group",
+    "text": "If you still live with your parents, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 37,
+    "type": "group",
+    "text": "Everyone who has ever been suspended from school, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 38,
+    "type": "group",
+    "text": "If you've ever kissed someone in this room, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 39,
+    "type": "group",
+    "text": "Everyone who has ever been in a physical fight, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 40,
+    "type": "group",
+    "text": "If you've ever been fired from a job and cried, take 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 41,
+    "type": "group",
+    "text": "Everyone who uses TikTok daily, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 42,
+    "type": "group",
+    "text": "If you've ever met someone from a dating app, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 43,
+    "type": "group",
+    "text": "Everyone who has a sibling they hate, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 44,
+    "type": "group",
+    "text": "If you've ever been black-out drunk, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 45,
+    "type": "group",
+    "text": "Everyone who has puked from drinking, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 46,
+    "type": "single",
+    "text": "Take a sip if you are the youngest player.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 47,
+    "type": "single",
+    "text": "Take a sip if you are the oldest player.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 48,
+    "type": "single",
+    "text": "Give out 2 sips if you have the most Instagram followers.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 49,
+    "type": "single",
+    "text": "Take a sip for every sibling you have.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 50,
+    "type": "single",
+    "text": "Take a sip if your phone screen is cracked.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 51,
+    "type": "single",
+    "text": "Give out a sip if you have 100% battery, otherwise take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 52,
+    "type": "single",
+    "text": "Take a sip if you are wearing white socks.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 53,
+    "type": "single",
+    "text": "Drink if you're the last person to have had a birthday.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 54,
+    "type": "single",
+    "text": "Give out 3 sips to the person on your right.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 55,
+    "type": "single",
+    "text": "Take a sip if you have more than 3 keys on your keychain.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 56,
+    "type": "single",
+    "text": "Drink if you can't touch your toes.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 57,
+    "type": "single",
+    "text": "Give out 2 sips if you can whistle.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 58,
+    "type": "single",
+    "text": "Take a sip if you're left-handed.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 59,
+    "type": "single",
+    "text": "Drink if you have a Tinder/Hinge profile right now.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 60,
+    "type": "single",
+    "text": "Take a sip if you've ever used a fake ID.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 61,
+    "type": "single",
+    "text": "Drink if you've ever been to a festival.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 62,
+    "type": "single",
+    "text": "Give out a sip to anyone who has ever bought you a drink.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 63,
+    "type": "single",
+    "text": "Take a sip if you've ever been fired from a job.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 64,
+    "type": "single",
+    "text": "Drink if you've ever been on a blind date.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 65,
+    "type": "single",
+    "text": "Give out 2 sips if you have a gym membership you actually use.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 66,
+    "type": "single",
+    "text": "Take a sip if you have a gym membership you never use.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 67,
+    "type": "single",
+    "text": "Drink if you've ever gotten a speeding ticket.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 68,
+    "type": "single",
+    "text": "Give out 3 sips if you've ever cooked a three-course meal.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 69,
+    "type": "single",
+    "text": "Take a sip if you can't roll your r's.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 70,
+    "type": "single",
+    "text": "Drink if you have a middle name.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 71,
+    "type": "single",
+    "text": "Take a sip if you are the tallest person in the room.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 72,
+    "type": "single",
+    "text": "Give out 2 sips if you have the most battery left on your phone.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 73,
+    "type": "single",
+    "text": "Take a sip if you have 0 unread messages.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 74,
+    "type": "single",
+    "text": "Give out 3 sips if you have more than 50 unread messages.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 75,
+    "type": "single",
+    "text": "Take a sip if you're wearing a ring.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 76,
+    "type": "single",
+    "text": "Drink if you've ever been dumped over text.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 77,
+    "type": "single",
+    "text": "Give out a sip to the person with the best smile.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 78,
+    "type": "single",
+    "text": "Take a sip if you have a private Instagram account.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 79,
+    "type": "single",
+    "text": "Drink if you've ever used someone else's Netflix account.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 80,
+    "type": "single",
+    "text": "Give out 2 sips if you've ever paid for a subscription you forgot to cancel.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 81,
+    "type": "single",
+    "text": "Take a sip if you can touch your nose with your tongue.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 82,
+    "type": "single",
+    "text": "Drink if you've ever broken someone's heart.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 83,
+    "type": "single",
+    "text": "Give out 2 sips if you've ever had a paranormal experience.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 84,
+    "type": "single",
+    "text": "Take a sip if you believe in aliens.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 85,
+    "type": "single",
+    "text": "Drink if you've ever sneaked into a club/bar.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 86,
+    "type": "single",
+    "text": "Give out a sip if you can name 5 capitals in Europe in 10 seconds. If you fail, you drink.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 87,
+    "type": "single",
+    "text": "Take a sip if you sleep with socks on.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 88,
+    "type": "single",
+    "text": "Drink if you've ever sent a text to the wrong person.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 89,
+    "type": "single",
+    "text": "Give out 2 sips if you've ever gotten a tattoo while drunk.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 90,
+    "type": "single",
+    "text": "Take a sip if you're the worst cook in the room.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 91,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=vfIAhr2uQHI"
+  },
+  {
+    "id": 92,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=FTQ4hDnXyoY"
+  },
+  {
+    "id": 93,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=mUa5Hxv8T3s"
+  },
+  {
+    "id": 94,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=ldr0Wdyi_OI"
+  },
+  {
+    "id": 95,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=S_Eyz3sW9Dw"
+  },
+  {
+    "id": 96,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=4lWgvFQX2MM"
+  },
+  {
+    "id": 97,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=IRrtV8YVx7U"
+  },
+  {
+    "id": 98,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=TRRW_rT1v3I"
+  },
+  {
+    "id": 99,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=I34q-CgPs8w"
+  },
+  {
+    "id": 100,
+    "type": "action",
+    "text": "If you know this song, take a sip and sing along!",
+    "action": "drink",
+    "amount": 2,
+    "audio": "https://www.youtube.com/watch?v=L68tpgDNY2o"
+  },
+  {
+    "id": 101,
+    "type": "action",
+    "text": "Categories: Brands of alcohol. You start. Go around the circle. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 102,
+    "type": "action",
+    "text": "Categories: Fast food chains. You start. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 103,
+    "type": "action",
+    "text": "Categories: Car brands. You start. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 104,
+    "type": "action",
+    "text": "Rule: You must drink with your non-dominant hand until your next turn. Drink if you forget.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 105,
+    "type": "action",
+    "text": "Rule: No pointing. If anyone points, they drink 1 sip. Lasts until your next turn.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 106,
+    "type": "action",
+    "text": "Rule: No swearing. If anyone swears, they drink 1 sip. Lasts until your next turn.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 107,
+    "type": "action",
+    "text": "Rule: Nicknames only. If you use a real name, drink. Lasts until your next turn.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 108,
+    "type": "action",
+    "text": "Thumb Master: You are the Thumb Master. Place your thumb on the table. Last to copy you drinks. Lasts until the next Thumb Master.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 109,
+    "type": "action",
+    "text": "Question Master: If you ask a question and someone answers, they drink. Lasts until the next Question Master.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 110,
+    "type": "action",
+    "text": "Mate: Choose a mate. Whenever you drink, they drink. Lasts for 3 rounds.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 111,
+    "type": "action",
+    "text": "Waterfall: Everyone starts drinking. You can't stop until the person to your right stops. You start.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 112,
+    "type": "action",
+    "text": "Rhyme time: Say a word. Go around the circle rhyming. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 113,
+    "type": "action",
+    "text": "Never have I ever: Say something you've never done. Anyone who has done it drinks 1 sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 114,
+    "type": "action",
+    "text": "Never have I ever: Gotten blackout drunk. If you have, drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 115,
+    "type": "action",
+    "text": "Never have I ever: Sent a risky text. If you have, drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 116,
+    "type": "action",
+    "text": "Truth or Dare: Choose one. If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 117,
+    "type": "action",
+    "text": "Dare: Let the group send a text to someone in your contacts. If you refuse, finish your drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 118,
+    "type": "action",
+    "text": "Dare: Do 10 pushups. If you fail, take 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 119,
+    "type": "action",
+    "text": "Dare: Let the person to your left draw something on your face with a pen. If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 120,
+    "type": "action",
+    "text": "Truth: Who in this room would you survive the longest with on a deserted island? The chosen person takes a sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 121,
+    "type": "action",
+    "text": "Truth: Who is the worst dressed here? They take a sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 122,
+    "type": "action",
+    "text": "Truth: Have you ever had a crush on someone in this room? If yes, drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 123,
+    "type": "action",
+    "text": "Action: Swap seats with the person across from you.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 124,
+    "type": "action",
+    "text": "Action: Give your phone to the person on your right for 1 minute.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 125,
+    "type": "action",
+    "text": "Action: Do your best impression of another player. If they guess who it is, they drink. If not, you drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 126,
+    "type": "action",
+    "text": "Rule: No names. You must point to talk to someone. If anyone uses a name, they drink. Lasts until your next turn.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 127,
+    "type": "action",
+    "text": "Categories: Pokemon. You start. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 128,
+    "type": "action",
+    "text": "Categories: Video Games. You start. First to fail drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 129,
+    "type": "action",
+    "text": "Dare: Show the group the last photo you took on your phone. If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 130,
+    "type": "action",
+    "text": "Truth: What is your most embarrassing drunk story? If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 131,
+    "type": "action",
+    "text": "Mate: Choose two mates. Whenever you drink, they both drink. Lasts for 2 rounds.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 132,
+    "type": "action",
+    "text": "Rule: Little green man. Before you drink, you must 'remove' the imaginary little green man from your cup. If you forget, drink again.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 133,
+    "type": "action",
+    "text": "Action: Staring contest with the person on your left. Loser drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 134,
+    "type": "action",
+    "text": "Action: Arm wrestle the person on your right. Loser drinks 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 135,
+    "type": "action",
+    "text": "Dare: Let the group look at your screen time. If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 136,
+    "type": "action",
+    "text": "Never have I ever: Cheated on a test. If you have, drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 137,
+    "type": "action",
+    "text": "Never have I ever: Snooped through a partner's phone. If you have, drink.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 138,
+    "type": "action",
+    "text": "Truth: Who in this room do you think has the highest body count? They take a sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 139,
+    "type": "action",
+    "text": "Truth: Who in this room is the most likely to get arrested? They take a sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 140,
+    "type": "action",
+    "text": "Dare: Call a random contact and sing Happy Birthday. If you refuse, take 4 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 141,
+    "type": "action",
+    "text": "Action: Everyone vote on who is the funniest in the group. The winner gives out 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 142,
+    "type": "action",
+    "text": "Rule: Speak in an accent until your next turn. If you break character, take a sip.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 143,
+    "type": "action",
+    "text": "Action: Play rock, paper, scissors with the person across from you. Loser takes 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 144,
+    "type": "action",
+    "text": "Dare: Do 10 squats. If you fail, take 2 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 145,
+    "type": "action",
+    "text": "Truth: What is the biggest lie you've ever told your parents? If you refuse, take 3 sips.",
+    "action": "drink",
+    "amount": 2
+  },
+  {
+    "id": 146,
+    "type": "single",
+    "text": "Take a sip if you prefer dogs over cats.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 147,
+    "type": "single",
+    "text": "Take a sip if you prefer cats over dogs.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 148,
+    "type": "single",
+    "text": "Give out 2 sips if you've read a book this month.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 149,
+    "type": "single",
+    "text": "Take a sip if you're currently wearing a watch.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 150,
+    "type": "single",
+    "text": "Drink if you've ever thrown up in a taxi.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 151,
+    "type": "single",
+    "text": "Take 2 sips if you've ever been kicked out of a bar.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 152,
+    "type": "single",
+    "text": "Everyone who has an empty glass, refill and take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 153,
+    "type": "single",
+    "text": "If you are the host, hand out 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 154,
+    "type": "single",
+    "text": "If you arrived late today, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 155,
+    "type": "single",
+    "text": "If you arrived first today, hand out 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 156,
+    "type": "single",
+    "text": "Take a sip if you've ever eaten food off the floor.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 157,
+    "type": "single",
+    "text": "Drink if you've ever accidentally liked an old photo on Instagram while stalking.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 158,
+    "type": "single",
+    "text": "Take a sip if you still use Facebook.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 159,
+    "type": "single",
+    "text": "Drink if you've ever made a fake social media account.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 160,
+    "type": "single",
+    "text": "Give out 2 sips if you've ever won a contest.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 161,
+    "type": "single",
+    "text": "Take a sip if you've ever met a celebrity.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 162,
+    "type": "single",
+    "text": "Take a sip if you play a musical instrument.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 163,
+    "type": "single",
+    "text": "Drink if you have a birthday in the summer.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 164,
+    "type": "single",
+    "text": "Give out a sip if you have a birthday in the winter.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 165,
+    "type": "single",
+    "text": "Take a sip if you've ever gone skinny dipping.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 166,
+    "type": "single",
+    "text": "Drink if you've ever forgotten someone's name immediately after meeting them.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 167,
+    "type": "single",
+    "text": "Take a sip if you're wearing contacts or glasses.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 168,
+    "type": "single",
+    "text": "Give out 2 sips if you can do a backflip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 169,
+    "type": "single",
+    "text": "Take a sip if you've ever had a terrible haircut.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 170,
+    "type": "single",
+    "text": "Drink if you have a fear of spiders.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 171,
+    "type": "single",
+    "text": "Take a sip if you're wearing blue.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 172,
+    "type": "single",
+    "text": "Give out 2 sips if you prefer tea over coffee.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 173,
+    "type": "single",
+    "text": "Take a sip if you've ever broken a phone screen.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 174,
+    "type": "single",
+    "text": "Drink if you have a streaming service open right now.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 175,
+    "type": "single",
+    "text": "Take 2 sips if you've ever been kicked out of a club.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 176,
+    "type": "single",
+    "text": "Everyone who has ever been on a plane, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 177,
+    "type": "single",
+    "text": "If you are the DJ right now, hand out 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 178,
+    "type": "single",
+    "text": "If you're wearing a hat, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 179,
+    "type": "single",
+    "text": "If you've ever eaten a whole pizza by yourself, give out 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 180,
+    "type": "single",
+    "text": "Take a sip if you've ever fallen asleep at a party.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 181,
+    "type": "single",
+    "text": "Drink if you've ever had to be carried home.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 182,
+    "type": "single",
+    "text": "Take a sip if you've ever cried in a bathroom at a club.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 183,
+    "type": "single",
+    "text": "Give out 2 sips if you can do a cartwheel.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 184,
+    "type": "single",
+    "text": "Take a sip if you've ever lost your wallet on a night out.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 185,
+    "type": "single",
+    "text": "Drink if you've ever lost your keys on a night out.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 186,
+    "type": "single",
+    "text": "Give out a sip if you've ever thrown up on someone else.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 187,
+    "type": "single",
+    "text": "Take a sip if you've ever woken up and not known where you were.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 188,
+    "type": "single",
+    "text": "Drink if you have more than 3 tattoos.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 189,
+    "type": "single",
+    "text": "Give out 2 sips if you've ever been to another continent.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 190,
+    "type": "single",
+    "text": "Take a sip if you're drinking water right now (liar).",
+    "action": "drink",
+    "amount": 1
+  }
+]
