@@ -1338,5 +1338,180 @@
     "text": "Take a sip if you're drinking water right now (liar).",
     "action": "drink",
     "amount": 1
+  },
+  {
+    "id": 191,
+    "type": "single",
+    "text": "Show the last person you texted. If their name is saved with an emoji, take 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 192,
+    "type": "single",
+    "text": "Open your camera roll to a random photo from 6 months ago. If it's a screenshot, drink 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 193,
+    "type": "group",
+    "text": "Last person to show their weekly screen time, drink 4 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 194,
+    "type": "action",
+    "text": "Pass your phone left. They read your last sent text out loud. Take a sip for every laugh.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 195,
+    "type": "single",
+    "text": "Read your most recent Google search out loud. Take 2 sips if it's embarrassing.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 196,
+    "type": "action",
+    "text": "On the count of 3, everyone point at who's most likely to text their ex tonight. Most fingers = 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 197,
+    "type": "action",
+    "text": "Vote: who's the worst driver here? They drink 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 198,
+    "type": "action",
+    "text": "Everyone point at who they'd trust with their password. They give out 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 199,
+    "type": "action",
+    "text": "Vote: who's most likely to fake their own death? They drink 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 200,
+    "type": "action",
+    "text": "Categories: go around naming red foods. First to repeat or stall drinks 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 201,
+    "type": "action",
+    "text": "Everyone counts up from 1, but skip every multiple of 3. Mess up, drink 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 202,
+    "type": "action",
+    "text": "Eye contact with the player across from you. First to laugh or break takes 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 203,
+    "type": "action",
+    "text": "Rhyme chain. Pick a word, go around rhyming. First to fail drinks 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 204,
+    "type": "action",
+    "text": "Name 5 brands of beer in 10 seconds. Win = give out 4 sips. Fail = drink 4 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 205,
+    "type": "single",
+    "text": "Drink 2 sips if you've ever blocked someone over a group chat reply.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 206,
+    "type": "single",
+    "text": "Drink 3 sips if you still have an ex's hoodie.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 207,
+    "type": "single",
+    "text": "Take a sip if you've ever left a date because of the vibe alone.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 208,
+    "type": "group",
+    "text": "Everyone who has unfollowed someone out of spite, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 209,
+    "type": "group",
+    "text": "Everyone who's lied about reading a book, drink 2 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 210,
+    "type": "group",
+    "text": "Anyone who's cried at a Pixar movie as an adult, take a sip.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 211,
+    "type": "action",
+    "text": "Give the person on your right a 10-second compliment. If you stall, drink 3 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 212,
+    "type": "action",
+    "text": "Roast the host (lovingly). They decide if you drink 2 sips or they do.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 213,
+    "type": "action",
+    "text": "Swap drinks with someone for the next 3 cards.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 214,
+    "type": "action",
+    "text": "Trade phones with the player opposite you for 2 minutes. Whoever peeks first drinks 4 sips.",
+    "action": "drink",
+    "amount": 1
+  },
+  {
+    "id": 215,
+    "type": "single",
+    "text": "Take 2 sips if you have an ex's number still saved in your phone.",
+    "action": "drink",
+    "amount": 1
   }
 ]
